@@ -1,0 +1,10 @@
+rdflib
+numpy
+pandas
+sklearn
+SPARQLWrapper
+spacy
+networkx
+frozendict
+torch
+matplotlib
