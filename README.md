@@ -1,6 +1,11 @@
 # EaT-PIM 
 
-This repository contains code for proof-of-concept work of the EaT-PIM (**E**mbedding and **T**ransforming  **P**rocedural **I**nstructions for **M**odification) project. This project's general goal is to extract information from procedural instructions, represent it explicitly in a flow graph, and suggest modifications or substitutions of entities that are involved in the instructions. This work focuses on the domain of cooking and identifying reasonable ingredient substitutions within specific recipes. The approach utilized in this code involves processing the natural language instructions from recipes into a flow graph representation, followed by training an embedding model that aims to capture the flow and transformation of ingredients through the recipe's steps. Please note that this software is a research prototype, solely developed for and published as a part of the publication cited above. It will neither be maintained nor monitored in any way.
+This repository contains the codes for proof-of-concept work of EaT-PIM (**E**mbedding and **T**ransforming  **P**rocedural **I**nstructions for **M**odification) project. The codes allow users to reproduce and extend the results reported in the work. Please cite the paper when reporting, reproducing or extending the results of this work.
+
+[Camera-ready version of ISWC 2022](docs/ISWC_EaT_PIM.pdf)][[Supplemental material](docs/ISWC_EaT_PIM_supp.pdf)]
+
+This project's general goal is to extract information from procedural instructions, represent it explicitly in a flow graph, and suggest modifications or substitutions of entities that are involved in the instructions. This work focuses on the domain of cooking and identifying reasonable ingredient substitutions within specific recipes. The approach utilized in this code involves processing the natural language instructions from recipes into a flow graph representation, followed by training an embedding model that aims to capture the flow and transformation of ingredients through the recipe's steps. Please note that this software is a research prototype, solely developed for and published as a part of the publication cited above. It will neither be maintained nor monitored in any way.
+
 
 ## Current Features
 
@@ -138,6 +143,18 @@ Visualizations of the flow graph also are produced by this step. The above image
 - data/RAW_recipes.csv was downloaded from [https://www.kaggle.com/shuyangli94/food-com-recipes-and-user-interactions](https://www.kaggle.com/shuyangli94/food-com-recipes-and-user-interactions), containing crawled data from Food.com. This dataset was published in  Bodhisattwa Prasad Majumder, Shuyang Li, Jianmo Ni, Julian McAuley, *Generating Personalized Recipes from Historical User Preferences*, EMNLP, 2019
 - data/foodon_ontologies includes several OWL files of rdf data related used to form [FoodOn](https://foodon.org/).
 - data/wikidata_cooking contains two nquad files, based on data from [Wikidata](https://www.wikidata.org). The data contains types of culinary equipment and types of food preparations, as well as their labels, subclass relations, and partOf/instanceOf relations.
+
+## Citation
+If you use this work, please cite:
+
+```
+@InProceedings{eatpim,
+author="Sola S. Shirai and HyeongSik Kim",
+title="EaT-PIM: Substituting Entities in Procedural Instructions using Flow Graphs and Embeddings",
+booktitle="The Semantic Web -- ISWC 2022",
+year="2022",
+}
+```
 
 # License
 EaT-PIM is open-sourced under the AGPL-3.0 license. See the [LICENSE](LICENSE) file for details. For a list of other open source components included in EaT-PIM, see the file [3rd-party-licenses.txt](3rd-party-licenses.txt).
