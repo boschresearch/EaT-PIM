@@ -236,7 +236,7 @@ class TrainGraphDataset(Dataset):
         for k, v_list in input_dict.items():
             id_content = []
             for v in v_list:
-                if isinstance(v, dict):
+                if isinstance(v, dict) or isinstance(v, frozendict):
                     inner_dict = self.convert_to_tensors(op_leaf_count, rand_options, v)
                     id_content.append(inner_dict)
                 else:
