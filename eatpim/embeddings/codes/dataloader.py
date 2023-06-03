@@ -195,7 +195,7 @@ def count_leaves(input_dict, leafs):
     lcount = 0
     for k, v_list in input_dict.items():
         for v in v_list:
-            if isinstance(v, dict):
+            if isinstance(v, dict) or isinstance(v, frozendict):
                 inner_lcount, leafs = count_leaves(v, leafs)
                 lcount += inner_lcount
             else:
@@ -236,7 +236,7 @@ class TrainGraphDataset(Dataset):
         for k, v_list in input_dict.items():
             id_content = []
             for v in v_list:
-                if isinstance(v, dict):
+                if isinstance(v, dict) or isinstance(v, frozendict):
                     inner_dict = self.convert_to_tensors(op_leaf_count, rand_options, v)
                     id_content.append(inner_dict)
                 else:
@@ -416,7 +416,7 @@ class TestGraphDataset(Dataset):
             for k, v_list in input_dict.items():
                 id_content = []
                 for v in v_list:
-                    if isinstance(v, dict):
+                    if isinstance(v, dict) or isinstance(v, frozendict):
                         id_content.append(convert_to_tensors(v))
                     else:
                         v_tensor = torch.cuda.LongTensor([v], device=self.device) if self.device == 'cuda' else torch.LongTensor([v], device=self.device)
@@ -508,7 +508,7 @@ class PathTrainGraphDataset(Dataset):
         for k, v_list in input_dict.items():
             path_content = []
             for v in v_list:
-                if isinstance(v, dict):
+                if isinstance(v, dict) or isinstance(v, frozendict):
                     inner_content = self.get_head_paths(v)
                     path_content.extend(inner_content)
                 else:
