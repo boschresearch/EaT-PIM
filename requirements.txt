@@ -1,7 +1,7 @@
 rdflib
 numpy
 pandas
-sklearn
+scikit-learn
 SPARQLWrapper
 spacy
 networkx
