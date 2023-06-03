@@ -782,7 +782,9 @@ class KGEModel(nn.Module):
 
                         batch_size = 1
 
-                        score = model((positive_sample, negative_sample), mode)
+                        # this scoring is only valid for the graph-tail-batch evaluation. for other kinds of eval
+                        # remove the first two vars and change this to just score = model...
+                        _, _, score = model((positive_sample, negative_sample), mode)
 
                         score += filter_bias
 
